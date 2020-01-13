@@ -35,6 +35,10 @@ export class Home extends Component {
         this.interval = setInterval(this.getData, 15000);
     }
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     getData(e) {
         fetch("api/tube/gettubestatus")
             .then(response => response.json())
