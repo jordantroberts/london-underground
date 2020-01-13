@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 export class Home extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.getData = this.getData.bind(this);
         this.state = {
             lineId: "",
