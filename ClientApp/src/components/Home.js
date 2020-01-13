@@ -32,6 +32,7 @@ export class Home extends Component {
 
     componentDidMount() {
         this.getData();
+        this.interval = setInterval(this.getData, 15000);
     }
 
     getData(e) {
