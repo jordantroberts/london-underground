@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export class FetchData extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export class FetchData extends Component {
             status3: "",
             lineId4: "",
             status4: "",
-            lineId5:  "",
+            lineId5: "",
             status5: "",
             lineId6: "",
             status6: "",
@@ -28,21 +28,13 @@ export class FetchData extends Component {
             lineId11: "",
             status11: ""
         };
-        
     }
 
-    componentWillMount() {
-        window.addEventListener('load', this.getData);
+    componentDidMount() {
+        this.getData();
     }
-
-    componentWillUnmount() {
-        window.removeEventListener('load', this.getData);
-    }
-
-   
 
     getData(e) {
-        e.preventDefault();
         fetch("api/tube/gettubestatus")
             .then(response => response.json())
             .then(data =>
@@ -68,22 +60,17 @@ export class FetchData extends Component {
                     lineId10: data.lineId10,
                     status10: data.statusSeverityDescription10,
                     lineId11: data.lineId11,
-                    status11: data.statusSeverityDescription11,
+                    status11: data.statusSeverityDescription11
                 })
             );
-
     }
 
-
-
-
     render() {
-      
         return (
             <div>
                 <center>
                     <h1>Tube</h1>
-                
+
                     <h6>Tube Name</h6>
                     <p>{this.state.lineId}</p>
                     <h6>Status</h6>
@@ -128,8 +115,6 @@ export class FetchData extends Component {
                     <p>{this.state.lineId11}</p>
                     <h6>Status</h6>
                     <p> {this.state.status11}</p>
-
-       
                 </center>
             </div>
         );

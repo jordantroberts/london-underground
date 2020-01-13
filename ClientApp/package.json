@@ -34,5 +34,4 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src/"
   }
-
 }
